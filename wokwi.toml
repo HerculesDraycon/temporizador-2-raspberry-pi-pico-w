@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/botao_semaforo.uf2'
+elf = 'build/botao_semaforo.elf'

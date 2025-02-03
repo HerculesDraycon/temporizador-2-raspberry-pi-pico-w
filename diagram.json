@@ -1,0 +1,67 @@
+{
+    "version": 1,
+    "author": "Hércules Sampaio",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-pi-pico-w", "id": "pico", "top": 0, "left": 0, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 82.8,
+        "left": -169,
+        "attrs": { "color": "limegreen" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 140.4,
+        "left": -169,
+        "attrs": { "color": "yellow" }
+      },
+      { "type": "wokwi-led", "id": "led3", "top": 188.4, "left": -169, "attrs": { "color": "red" } },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 176.75,
+        "left": -220.8,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 224.75,
+        "left": -220.8,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r3",
+        "top": 119.15,
+        "left": -220.8,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-pushbutton-6mm",
+        "id": "btn1",
+        "top": 26.6,
+        "left": -57.6,
+        "attrs": { "color": "grey" }
+      }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "pico:GND.1", "btn1:1.r", "black", [ "h0" ] ],
+      [ "pico:GP5", "btn1:2.r", "green", [ "h0" ] ],
+      [ "pico:GP11", "led1:A", "green", [ "h-25.25", "v-12.85", "h-124.8" ] ],
+      [ "pico:GP12", "led2:A", "green", [ "h-25.25", "v25.59" ] ],
+      [ "pico:GP13", "led3:A", "green", [ "h-15.65", "v63.99" ] ],
+      [ "led1:C", "r3:2", "green", [ "v0" ] ],
+      [ "led2:C", "r1:2", "green", [ "v0" ] ],
+      [ "led3:C", "r2:2", "green", [ "v0" ] ],
+      [ "pico:GND.2", "r3:1", "black", [ "h0" ] ],
+      [ "pico:GND.2", "r1:1", "black", [ "h0" ] ],
+      [ "pico:GND.2", "r2:1", "black", [ "h0" ] ]
+    ],
+    "dependencies": {}
+  }
