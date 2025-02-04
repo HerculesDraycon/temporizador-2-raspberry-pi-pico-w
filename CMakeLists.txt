@@ -41,8 +41,8 @@ pico_set_program_name(botao_semaforo "botao_semaforo")
 pico_set_program_version(botao_semaforo "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(botao_semaforo 0)
-pico_enable_stdio_usb(botao_semaforo 0)
+pico_enable_stdio_uart(botao_semaforo 1)
+pico_enable_stdio_usb(botao_semaforo 1)
 
 # Add the standard library to the build
 target_link_libraries(botao_semaforo

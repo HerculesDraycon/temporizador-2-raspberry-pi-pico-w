@@ -17,10 +17,13 @@ bool turn_off_callback(struct repeating_timer *t){
 
     if(estado == 0){
         gpio_put(RED_PINO, false);
+        printf("\nEstado 0, o pino RED foi desligado.");
     } else if(estado == 1){
         gpio_put(BLUE_PINO, false);
+        printf("\nEstado 1, o pino BLUE foi desligado.");
     } else if(estado == 2){
         gpio_put(GREEN_PINO, false);
+        printf("\nEstado 2, o pino GREEN foi desligado e o ciclo se encerra.");
         led_ligado = false;            // Libera o botao para uma nova ativacao
         estado = -1;                   // Reseta para a proxima ativacao
         return false;                  // Para o temporizador quando o ultimo LED apaga
@@ -49,7 +52,7 @@ void button_callback(uint gpio, uint32_t events){
             static struct repeating_timer off_timer;
             add_repeating_timer_ms(-3000, turn_off_callback, NULL, &off_timer);
 
-            printf("O botao foi acionado.");
+            printf("\nBotão pressionado! O mesmo permanecera invalido ate o fim da rotina.");
 
         }
     }
